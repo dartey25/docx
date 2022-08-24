@@ -9,7 +9,7 @@ const Documents = () => {
             <div className="page-header page-header-light">
                 <div className="page-header-content header-elements-lg-inline">
                     <div className="page-title d-flex">
-                        <h4><i className="icon-arrow-left52 mr-2" onClick={() => navigate('/docx/main')}></i> <span
+                        <h4><i className="icon-arrow-left52 mr-2" onClick={() => navigate('/docx')}></i> <span
                             className="font-weight-semibold">Підтримка</span> - MDUA806020_001667.zmdx</h4>
                         <a href="#" className="header-elements-toggle text-body d-lg-none"><i
                             className="icon-more"></i></a>
