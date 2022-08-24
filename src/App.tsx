@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import 'antd/dist/antd.css';
 
 import 'core'
