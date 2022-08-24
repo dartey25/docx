@@ -21,7 +21,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/docx" /*component={Home}*/ element={<BaseLayout/>}>
+                <Route path="/" /*component={Home}*/ element={<BaseLayout/>}>
                     <Route index element={
                         <ProtectedRoute user={user}>
                             <Home/>
@@ -33,7 +33,7 @@ function App() {
                             <HomeMui/>
                         </ProtectedRoute>
                     }/>
-                    <Route path="main" element={<MainLayout/>}>
+                    <Route path="docx" element={<MainLayout/>}>
                         <Route index element={
                             <ProtectedRoute user={user}>
                                 <Documents/>
