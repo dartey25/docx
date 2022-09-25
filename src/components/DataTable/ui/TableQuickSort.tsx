@@ -1,23 +1,22 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import TextField, { TextFieldProps } from '@mui/material/TextField';
+import TextField, {TextFieldProps} from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
-import { debounce } from '@mui/material/utils';
-import { useGridApiContext } from '@mui/x-data-grid/hooks/utils/useGridApiContext';
-import { useGridRootProps } from '@mui/x-data-grid/hooks/utils/useGridRootProps';
-import { useGridSelector } from '@mui/x-data-grid/hooks/utils/useGridSelector';
-import { gridQuickFilterValuesSelector } from '@mui/x-data-grid/hooks/features/filter';
-import { GridFilterModel } from '@mui/x-data-grid/models/gridFilterModel';
-import { isDeepEqual } from '@mui/x-data-grid/utils/utils';
+import {styled} from '@mui/material/styles';
+import {debounce} from '@mui/material/utils';
+import {useGridApiContext} from '@mui/x-data-grid/hooks/utils/useGridApiContext';
+import {useGridRootProps} from '@mui/x-data-grid/hooks/utils/useGridRootProps';
+import {useGridSelector} from '@mui/x-data-grid/hooks/utils/useGridSelector';
+import {gridQuickFilterValuesSelector} from '@mui/x-data-grid/hooks/features/filter';
+import {GridFilterModel} from '@mui/x-data-grid/models/gridFilterModel';
+import {isDeepEqual} from '@mui/x-data-grid/utils/utils';
 import Input from './ui/Input'
-import InputUnstyled from "@mui/base/InputUnstyled";
 
 const GridToolbarQuickFilterRoot = styled(TextField, {
     name: 'MuiDataGrid',
     slot: 'ToolbarQuickFilter',
     overridesResolver: (props, styles) => styles.toolbarQuickFilter,
-})(({ theme }) => ({
+})(({theme}) => ({
     width: 'auto',
     paddingBottom: theme.spacing(0.5),
     '& input': {
@@ -125,38 +124,13 @@ function TableQuickSort(props: GridToolbarQuickFilterProps) {
         updateSearchValue('');
     }, [updateSearchValue]);
     return (
-        // <GridToolbarQuickFilterRoot
-        //     as={rootProps.components.BaseTextField}
-        //     variant="standard"
-        //     value={searchValue}
-        //     onChange={handleSearchValueChange}
-        //     placeholder={apiRef.current.getLocaleText('toolbarQuickFilterPlaceholder')}
-        //     aria-label={apiRef.current.getLocaleText('toolbarQuickFilterLabel')}
-        //     type="search"
-        //     InputProps={{
-        //         startAdornment: <rootProps.components.QuickFilterIcon fontSize="small" />,
-        //         endAdornment: (
-        //             <IconButton
-        //                 aria-label={apiRef.current.getLocaleText('toolbarQuickFilterDeleteIconLabel')}
-        //                 size="small"
-        //                 sx={{ visibility: searchValue ? 'visible' : 'hidden' }}
-        //                 onClick={handleSearchReset}
-        //             >
-        //                 <rootProps.components.QuickFilterClearIcon fontSize="small" />
-        //             </IconButton>
-        //         ),
-        //     }}
-        //     {...other}
-        //     {...rootProps.componentsProps?.baseTextField}
-        // />
-        // <Input  />
-        <InputUnstyled
-                value={searchValue}
-                onChange={handleSearchValueChange}
-                placeholder="Пошук..."
-                aria-label={apiRef.current.getLocaleText('toolbarQuickFilterLabel')}
-                type="search"
-                componentsProps={{ input: { className: 'form-control' } }}
+        <Input
+            placeholder="Пошук..."
+            value={searchValue}
+            onChange={handleSearchValueChange}
+            icon='icon-search4'
+            iconPosition="right"
+            other={{'aria-label': apiRef.current.getLocaleText('toolbarQuickFilterLabel')}}
         />
     );
 }

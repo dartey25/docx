@@ -1,0 +1,130 @@
+.main-wrapper {
+  margin-top: 2rem;
+  height: 94vh;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
+  //margin: 0 auto;
+  //box-shadow: 0 0 25px rgba(0, 0, 0, 0.04204);
+
+  &__input{
+    padding: 18px!important;
+    border-radius: 10px;
+  }
+
+  &__sidebar {
+    width: 30%;
+    border-right: 1px solid map-get($grey, main);
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 21px;
+      height: 58px;
+      border-bottom: 1px solid map-get($grey, main);
+      margin-bottom: 5px;
+      align-items: center;
+
+
+      .ant-btn-circle {
+        position: relative;
+        left: 5px;
+      }
+
+      & > div {
+        i {
+          display: inline-block;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &-dialogs {
+      height: 100%;
+      padding: 0 10px;
+
+
+      .dialogs {
+        height: 100%;
+
+        &__search {
+          margin: .7rem 0 .7rem 0;
+        }
+
+        &__list {
+          overflow: auto;
+          padding: 0 10px 0 0;
+          height: calc(100% - 68px);
+        }
+
+        //&__item {
+        //  padding: 10px 20px;
+        //  margin-bottom: 0;
+        //  cursor: pointer;
+        //
+        //  &.active,
+        //  &:hover {
+        //    background-color: #f3f7ff;
+        //  }
+        //}
+      }
+    }
+  }
+
+  &__dialog {
+    flex: 1;
+    position: relative;
+
+    .ant-empty {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      border-bottom: 1px solid map-get($grey, main);
+
+      &-partner {
+        display: flex;
+        align-items: center;
+      }
+
+      .ant-btn-circle {
+        i {
+          font-size: 22px;
+        }
+      }
+
+      .anticon{
+        color: map-get($primary, main);
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+      //&-center {
+      //  text-align: center;
+      //}
+
+
+      &-username {
+        display: block;
+        margin-bottom: 5px;
+        //margin-left: -50%;
+        font-weight: 500;
+      }
+    }
+
+    &-documents {
+      height: calc(100% - 138px);
+    }
+  }
+}

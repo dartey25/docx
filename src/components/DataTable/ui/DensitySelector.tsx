@@ -15,7 +15,7 @@ import {useGridRootProps} from '@mui/x-data-grid/hooks/utils/useGridRootProps';
 import {gridClasses} from '@mui/x-data-grid/constants/gridClasses';
 import {ButtonUnstyled} from "@mui/base";
 import {ViewGridIcon} from '@heroicons/react/solid'
-import IconButton from './ui/IconButton';
+import IconButton from '../ui/IconButton';
 
 const DensitySelector = React.forwardRef<HTMLButtonElement, ButtonProps>(
     function GridToolbarDensitySelector(props, ref) {
